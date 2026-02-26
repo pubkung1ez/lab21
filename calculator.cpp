@@ -147,13 +147,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         return 0;
     }
 
-    hwnd = CreateWindowEx(WS_EX_CLIENTEDGE,
-        "WindowClass",
-        "My Calculator",
-        WS_VISIBLE | WS_OVERLAPPEDWINDOW,
-        CW_USEDEFAULT, CW_USEDEFAULT,
-        250, 200,
-        NULL, NULL, hInstance, NULL);
+    hwnd = CreateWindowEx(
+    WS_EX_CLIENTEDGE,
+    "WindowClass",
+    "My Calculator",
+    WS_VISIBLE | WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU,
+    CW_USEDEFAULT, CW_USEDEFAULT,
+    250, 200,
+    NULL, NULL, hInstance, NULL
+);
 
     if(hwnd == NULL) {
         MessageBox(NULL, "Window Creation Failed!", "Error!", MB_ICONEXCLAMATION | MB_OK);
